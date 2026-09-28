@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg">
+  <title>设计师作品集</title>
+  <meta property="og:title" content="设计师作品集">
+  <meta property="og:description" content="个人设计作品与项目经验展示">
+  <meta property="og:type" content="website">
+  <meta name="description" content="个人设计作品与项目经验展示">
+  <meta name="theme-color" content="#ffffff">
+  <script>
+    // Prevent dark mode flash of unstyled content
+    (function () {
+      try {
+        const stored = localStorage.getItem('portfolio-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const dark = stored === 'dark' || (stored === 'system' && prefersDark);
+        const mode = dark ? 'dark' : 'light';
+        const root = document.documentElement;
+        root.classList.toggle('dark', dark);
+        root.dataset.colorScheme = mode;
+        root.style.colorScheme = mode;
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#0d0d0f' : '#ffffff';
+      } catch (e) {
+        /* ignore */
+      }
+    })();
+  </script>
+  <script>
+    try {
+      window.__platform__ = JSON.parse('{{{__platform__}}}');
+    } catch (e) {
+      console.error('Failed to parse __platform__', e);
+    }
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/client/src/index.tsx"></script>
+</body>
+
+</html>
