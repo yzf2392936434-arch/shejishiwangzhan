@@ -19,7 +19,9 @@ import { ViewModule } from './modules/view/view.module';
 
 @Module({
   imports: [
+    // 平台 Module，提供平台能力
     PlatformModule.forRoot(),
+    // ====== @route-section: business-modules START ======
     AuthModule,
     WorksModule,
     CategoriesModule,
@@ -32,6 +34,10 @@ import { ViewModule } from './modules/view/view.module';
     CustomerMessagesModule,
     NewsModule,
     PublicModule,
+    // ====== @route-section: business-modules END ======
+
+    // ⚠️ @route-order: last
+    // ViewModule is the fallback route module, must be registered last.
     ViewModule,
   ],
   providers: [
