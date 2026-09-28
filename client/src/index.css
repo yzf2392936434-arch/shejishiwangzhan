@@ -26,6 +26,7 @@ body {
   }
 }
 
+/* 图片视频防下载保护（类 Instagram 风格） */
 body[data-anti-download="true"] img {
   -webkit-user-select: none;
   user-select: none;
@@ -40,6 +41,7 @@ body[data-anti-download="true"] video {
   -webkit-touch-callout: none;
 }
 
+/* 作品水印效果 - 通过 SVG data URI 实现斜向平铺文字水印 */
 .watermark-overlay {
   position: absolute;
   inset: 0;

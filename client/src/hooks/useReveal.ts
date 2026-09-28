@@ -7,6 +7,16 @@ interface UseRevealOptions {
   once?: boolean;
 }
 
+/**
+ * IntersectionObserver 驱动的滚动淡入动画 hook
+ * - 元素进入视口时添加 fade-in-up 效果
+ * - 默认仅触发一次（once: true）
+ * - 配合全局 CSS class .reveal / .reveal-visible 使用
+ *
+ * 用法：
+ *   const ref = useReveal<HTMLDivElement>();
+ *   <div ref={ref} className="reveal">内容</div>
+ */
 export function useReveal<T extends HTMLElement = HTMLDivElement>(
   options: UseRevealOptions = {},
 ): React.RefObject<T> {

@@ -16,7 +16,7 @@ function generateUUID(): string {
 export function useVisitorId(): string {
   const [visitorId, setVisitorId] = useState<string>('');
 
-  useEffect(() => {
+  useEffect(() {
     let id = localStorage.getItem(STORAGE_KEY);
     if (!id) {
       id = generateUUID();
