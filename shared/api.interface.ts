@@ -15,6 +15,7 @@ export interface WorkImage {
   height?: number;
 }
 
+// 作品内容块（自由排版）
 export type WorkContentBlockType = 'text' | 'image' | 'video' | 'heading' | 'decision' | 'metric' | 'quote' | 'background' | 'divider' | 'pullquote' | 'dropcap' | 'twocolumn';
 
 export interface WorkContentBlock {
@@ -268,6 +269,19 @@ export interface HomeCtaConfig {
   resumeMode?: 'download' | 'view';
 }
 
+export interface ThemeConfig {
+  preset?: string;
+  primaryColor?: string;
+  accentColor?: string;
+  backgroundColor?: string;
+  navColor?: string;
+  textColor?: string;
+  buttonColor?: string;
+  buttonTextColor?: string;
+  linkColor?: string;
+  borderColor?: string;
+}
+
 export interface SiteSettings {
   id: string;
   siteName: string;
@@ -303,19 +317,6 @@ export interface SiteSettings {
   homeCta: HomeCtaConfig;
   antiDownloadEnabled: boolean;
   updatedAt: string;
-}
-
-export interface ThemeConfig {
-  preset?: string;
-  primaryColor?: string;
-  accentColor?: string;
-  backgroundColor?: string;
-  navColor?: string;
-  textColor?: string;
-  buttonColor?: string;
-  buttonTextColor?: string;
-  linkColor?: string;
-  borderColor?: string;
 }
 
 export interface MediaListResponse {
